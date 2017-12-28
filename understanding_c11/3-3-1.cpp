@@ -1,11 +1,16 @@
 #include <iostream>
+#include <stdio.h>
 
 using namespace std;
 
 class HasPtrMem{
 public:
-  HasPtrMem():d(new int(0)){}
-  HasPtrMem(const HasPtrMem& h):d(new int(*h.d)){}  //拷贝构造函数，从堆中非配内存，由*h.d初始化
+  HasPtrMem():d(new int(0)){printf("%p\n", d);}
+  HasPtrMem(const HasPtrMem& h):d(new int(*h.d))
+  {
+    std::cout << "copy constructor ?" << '\n';
+    printf("%p\n", d);
+  }  //拷贝构造函数，从堆中非配内存，由*h.d初始化
 
   ~HasPtrMem(){delete d; }
 
