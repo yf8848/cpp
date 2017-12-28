@@ -15,6 +15,7 @@ public:
 
   ~HasPtrMem()
   {
+    delete d;
     std::cout << "destruct:"<<++n_dstr << '\n';
   }
 
