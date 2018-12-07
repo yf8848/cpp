@@ -8,7 +8,7 @@ struct X
   const int a;
   const int& r;
 
-  // const and refer member in struct（or）class must be initilized in destructor manually
+  // const and refer member in struct（or）class must be initilized in constructor manually
   X(int a =10):a(a),r(a)
   {}
 };
